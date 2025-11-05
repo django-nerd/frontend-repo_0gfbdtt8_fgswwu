@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import HeaderNav from "./components/HeaderNav";
+import Hero from "./components/Hero";
+import OrientationForm from "./components/OrientationForm";
+import TracksGrid from "./components/TracksGrid";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Footer() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
+    <footer id="contact" className="mt-16 border-t border-neutral-200 dark:border-neutral-800">
+      <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-neutral-600 dark:text-neutral-300 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p>
+          © {new Date().getFullYear()} Programme d'orientation des stagiaires OFPPT
         </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
+        <p className="opacity-80">Maquette de démonstration – non officiel</p>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white">
+      <HeaderNav />
+      <Hero />
+      <OrientationForm />
+      <TracksGrid />
+      <Footer />
+    </div>
+  );
+}
